@@ -96,7 +96,7 @@ export class VpcValidator {
   ): string[] {
     const vpcs = [...values.vpcs, ...(values.vpcTemplates ?? [])];
     const centralVpcs: VpcConfig[] = [];
-    const unsupportedRegions = ['us-gov-west-1', 'us-gov-east-1'];
+    const unsupportedRegions = ['us-gov-west-1'];
     // Get VPCs marked as central; do not allow VPC templates
     vpcs.forEach(vpc => {
       if (vpc.interfaceEndpoints?.central && !isNetworkType<VpcConfig>('IVpcConfig', vpc)) {
